@@ -2,14 +2,28 @@ import React from "react";
 import Emoji from "../Layout/Emoji";
 import ToolTip from "./ToolTip";
 import { Link } from "react-router-dom";
+import CountBox from "./CountBox";
 
 const Tools = (props) => {
   return (
     <div className={props.classes}>
-      <div className="profile-name">{props.title}</div>
-      <div className="profile-email">{props.subtitle}</div>
+        
+      <div className="profile-name">Admin Panel</div>
+     
+        <div className="row mt-4">
+          <div className="col-sm-4">
+            <CountBox title="Quizzes Created" number={props.curated} />
+          </div>
+         
+        </div>
+        
+      
+      {/* <div className="profile-email">{props.subtitle}</div> */}
       <div className="row mt-4">
         <div className="card">
+
+            
+            
           <div className="tooltip-wrapper">
             <Link to="/quiz-builder">
               {/* {props.role==="Admin" && }
@@ -21,30 +35,8 @@ const Tools = (props) => {
            
           </div>
         </div>
-        <div className="card">
-          <div className="tooltip-wrapper">
-            <Link to="/quiz-fetcher">
-              <button className="tool-button">
-                Enter Quiz Id
-              </button>
-            </Link>
-            
-          </div>
-        </div>
-        {/* <div className="card">
-          <div className="tooltip-wrapper">
-            <button disabled="disabled" className="tool-button grayed">
-              <Emoji emoji="🔥" /> Survival (Pro)
-            </button>
-          </div>
-        </div>
-        <div className="card">
-          <div className="tooltip-wrapper">
-            <button disabled="disabled" className="tool-button grayed">
-              <Emoji emoji="🩸" /> Slay 'em (Pro)
-            </button>
-          </div>
-        </div> */}
+       
+      
       </div>
       <div className="row mt-4">
         <div className="card">

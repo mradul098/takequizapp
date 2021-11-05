@@ -2,7 +2,7 @@ import React, { Component ,useEffect, useState }  from "react";
 import { Redirect } from "react-router-dom";
 import NavBar from "../Layout/NavBar";
 import Profile from "./Profile";
-import Tools from "./Tools";
+import Admintools from "./Admintools";
 import CreatedQuizList from "./CreatedQuizList";
 import CreatedResultList from "./CreatedResultList";
 import QuizService from "../../service/QuizService";
@@ -56,22 +56,18 @@ class Dashboard extends Component {
           onLogout={this.props.onLogout}
         />
         <div className="container-fluid">
-          <div className="row mt-5">
-            <Profile
+          <div className="row mt-5 mb-5">
+            {/* <Profile
               classes="col-sm-4 offset-sm-1 mr-4 section"
               name={this.state.user.name}
               email={this.state.user.email}
-              curated={this.state.user.quizCreated}
+              curated={this.state.user.quizCurated}
               attended={this.state.user.quizAttended}
               flawless={this.state.user.quizFlawless}
-            />
+            /> */}
 
             {/* Tools section  */}
-            <Tools
-              classes="col-sm-6 ml-4 section tools"
-              title="Takequiz Tools"
-              // subtitle="Some tools may only be available in Pro License"
-            />
+            
             {/* Tools section  end*/}
           </div>
           <div
@@ -79,6 +75,17 @@ class Dashboard extends Component {
             // very important code
             // to (roughly) algin this with upper sections
           >
+              <Admintools
+              classes="curated-quiz-section section2"
+              title="Takequiz Tools"
+              name={this.state.user.name}
+              email={this.state.user.email}
+              curated={this.state.user.quizCurated}
+              attended={this.state.user.quizAttended}
+              flawless={this.state.user.quizFlawless}
+              // subtitle="Some tools may only be available in Pro License"
+            />
+            
             <CreatedQuizList
               // use this class only if you're desperate: curated-quiz-section
               classes="curated-quiz-section section"

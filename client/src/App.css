@@ -197,6 +197,13 @@
   padding: 26px;
   /* box-shadow: 6px 6px #f87d58; */
 }
+.section2 {
+  background-color: rgb(158, 187, 190);
+  border-radius: 4px;
+  padding: 50px;
+  margin-right: -80px;
+  /* box-shadow: 6px 6px #f87d58; */
+}
 
 .profile-name {
   color: var(--quizden-bg-dark);

@@ -39,7 +39,8 @@ class Registration extends Component {
       if (response === false) {
         this.setState({ error: true });
       } else {
-        this.props.history.push("/done");
+        alert("Account created Successfully")
+        this.props.history.push("/login");
       }
     });
   };

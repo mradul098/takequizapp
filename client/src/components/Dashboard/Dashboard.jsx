@@ -57,11 +57,12 @@ class Dashboard extends Component {
         />
         <div className="container-fluid">
           <div className="row mt-5">
+            {console.log(this.state.user)}
             <Profile
               classes="col-sm-4 offset-sm-1 mr-4 section"
               name={this.state.user.name}
               email={this.state.user.email}
-              curated={this.state.user.quizCreated}
+              curated={this.state.user.quizCurated}
               attended={this.state.user.quizAttended}
               flawless={this.state.user.quizFlawless}
             />
