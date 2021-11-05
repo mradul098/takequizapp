@@ -11,6 +11,7 @@ import QuizDone from "./components/QuizBuilder/QuizDone";
 import QuizFetcher from "./components/QuizTaker/QuizFetcher";
 import QuizTaker from "./components/QuizTaker/QuizTaker";
 import QuizTaken from "./components/QuizTaker/QuizTaken";
+import AdminDash from "./components/Dashboard/AdminDash"
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class App extends Component {
         _id: "",
         name: "",
         email: "",
-        quizCurated: 0,
+        quizCreated: 0,
         quizAttended: 0,
         quizFlawless: 0,
       },
@@ -61,7 +62,7 @@ class App extends Component {
     sessionStorage.setItem("quizden-authToken", "");
   };
 
-  handleQuizzesCurated = (quizzes) => {
+  handleQuizzesCreated = (quizzes) => {
     quizzes.reverse();
     this.setState({ quizzes: quizzes });
   };
@@ -135,6 +136,7 @@ class App extends Component {
             exact
             path="/dashboard"
             render={(props) => (
+              this.state.user.email != "admin123@takequiz.com" ? 
               <Dashboard
                 {...props}
                 isLoggedIn={this.state.isLoggedIn}
@@ -142,7 +144,17 @@ class App extends Component {
                 onLogout={this.handleLogout}
                 user={this.state.user}
                 quizzes={this.state.quizzes}
-                onQuizLoad={this.handleQuizzesCurated}
+                onQuizLoad={this.handleQuizzesCreated}
+                onUserUpdate={this.handleUserUpdate}
+              /> :
+              <AdminDash
+                {...props}
+                isLoggedIn={this.state.isLoggedIn}
+                checkLogin={this.checkLogin}
+                onLogout={this.handleLogout}
+                user={this.state.user}
+                quizzes={this.state.quizzes}
+                onQuizLoad={this.handleQuizzesCreated}
                 onUserUpdate={this.handleUserUpdate}
               />
             )}

@@ -6,15 +6,9 @@ const Tool = (props) => {
   return (
     <div className="tooltip-wrapper">
       <button  className="tool-button">
-        <Emoji emoji="💀" /> Build Quiz
+         Create Quiz
       </button>
-      <div className="right">
-        <ToolTip
-          emoji="🪓"
-          title="Make them suffer!"
-          description=""
-        />
-      </div>
+     
     </div>
   );
 };

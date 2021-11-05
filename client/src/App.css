@@ -195,7 +195,7 @@
   background-color: var(--quizden-light);
   border-radius: 4px;
   padding: 26px;
-  box-shadow: 6px 6px #f87d58;
+  /* box-shadow: 6px 6px #f87d58; */
 }
 
 .profile-name {

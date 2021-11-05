@@ -42,7 +42,7 @@ const TakequizController = {
           _id,
           name,
           email,
-          quizCurated,
+          quizCreated,
           quizAttended,
           quizFlawless,
         } = quizzer;
@@ -51,7 +51,7 @@ const TakequizController = {
           _id,
           name,
           email,
-          quizCurated,
+          quizCreated,
           quizAttended,
           quizFlawless,
         });
@@ -71,10 +71,10 @@ const TakequizController = {
       return res.status(400).send("DB Query failed.");
     }
   },
-  incrementCuratedCount: async (user_id) => {
+  incrementCreatedCount: async (user_id) => {
     try {
       const quzzier = await Takequiz.findByIdAndUpdate(user_id, {
-        $inc: { quizCurated: 1 },
+        $inc: { quizCreated: 1 },
       });
       return quzzier;
     } catch (err) {

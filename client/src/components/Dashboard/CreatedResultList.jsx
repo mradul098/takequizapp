@@ -1,7 +1,7 @@
 import React from "react";
 import ResultInfo from "./ResultInfo";
 
-const CuratedResultList = (props) => {
+const CreatedResultList = (props) => {
   return (
     
     <div  className={props.classes}>
@@ -29,6 +29,7 @@ const CuratedResultList = (props) => {
             // console.log(quiz.partInfo[0].partScore),
             // console.log("++++++"),    
             quiz.partInfo.map((s,i)=>(
+              (quiz.partInfo[i].partId==props.user.name)?
               <ResultInfo
             // for (let i = 0; i < partInfo.length; i++) {
                 id={quiz._id}
@@ -39,7 +40,7 @@ const CuratedResultList = (props) => {
                 
                 
               // }            
-            />
+            />:""
             ))
             
             // i++
@@ -53,4 +54,4 @@ const CuratedResultList = (props) => {
   );
 };
 
-export default CuratedResultList;
+export default CreatedResultList;

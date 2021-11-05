@@ -15,28 +15,20 @@ const Tools = (props) => {
               {/* {props.role==="Admin" && }
               disabled={props.role==="Student"} */}
               <button  className="tool-button">
-                <Emoji emoji="💀" /> Build Quiz
+                Create Quiz
               </button>
             </Link>
-            <ToolTip
-              emoji="🪓"
-              title="Make them suffer!"
-              description="Create a deadly quiz with your wrath!"
-            />
+           
           </div>
         </div>
         <div className="card">
           <div className="tooltip-wrapper">
             <Link to="/quiz-fetcher">
               <button className="tool-button">
-                <Emoji emoji="⚔️" /> Attend Quiz
+                Enter Quiz Id
               </button>
             </Link>
-            <ToolTip
-              emoji="⚰️"
-              title="Hope you pass!"
-              description="Attend the quiz with all your might!"
-            />
+            
           </div>
         </div>
         {/* <div className="card">
@@ -53,6 +45,30 @@ const Tools = (props) => {
             </button>
           </div>
         </div> */}
+      </div>
+      <div className="row mt-4">
+        <div className="card">
+          <div className="tooltip-wrapper">
+            <Link to="/quiz-builder">
+              
+              <button  className="tool-button">
+                Create Quiz
+              </button>
+            </Link>
+           
+          </div>
+        </div>
+        <div className="card">
+          <div className="tooltip-wrapper">
+            <Link to="/quiz-fetcher">
+              <button className="tool-button">
+                Enter Quiz Id
+              </button>
+            </Link>
+            
+          </div>
+        </div>
+        
       </div>
     </div>
   );

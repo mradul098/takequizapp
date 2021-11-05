@@ -19,7 +19,7 @@ const quizzerSchema = new mongoose.Schema({
     required: true,
     max: 255,
   },
-  quizCurated: {
+  quizCreated: {
     type: Number,
     default: 0,
   },

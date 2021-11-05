@@ -1,10 +1,10 @@
 import React from "react";
 import QuizInfo from "./QuizInfo";
 
-const CuratedQuizList = (props) => {
+const CreatedQuizList = (props) => {
   return (
     <div className={props.classes}>
-      <div className="profile-name">Curated Quizzes</div>
+      <div className="profile-name">Created Quizzes</div>
       <div className="profile-email">
         Quizzes curated by you. Copy and share the code.
       </div>
@@ -86,4 +86,4 @@ const CuratedQuizList = (props) => {
   );
 };
 
-export default CuratedQuizList;
+export default CreatedQuizList;

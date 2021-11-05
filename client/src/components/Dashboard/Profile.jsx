@@ -9,14 +9,12 @@ const Profile = (props) => {
         <div className="profile-email">{props.email}</div>
         <div className="row mt-4">
           <div className="col-sm-4">
-            <CountBox title="Quizzes Curated" number={props.curated} />
+            <CountBox title="Quizzes Created" number={props.curated} />
           </div>
           <div className="col-sm-4">
             <CountBox title="Quizzes Attended" number={props.attended} />
           </div>
-          <div className="col-sm-4">
-            <CountBox title="Flawless Quiz" number={props.flawless} />
-          </div>
+          
         </div>
         
       </div>

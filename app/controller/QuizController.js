@@ -28,7 +28,7 @@ const QuizController = {
       // return res.status(200).send("HU");
       const savedQuiz = await quiz.save();
 
-      const quizzer = TakequizController.incrementCuratedCount(user_id);
+      const quizzer = TakequizController.incrementCreatedCount(user_id);
       if (quizzer) {
         return res.status(200).send(savedQuiz);
       }
