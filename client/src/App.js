@@ -12,6 +12,8 @@ import QuizFetcher from "./components/QuizTaker/QuizFetcher";
 import QuizTaker from "./components/QuizTaker/QuizTaker";
 import QuizTaken from "./components/QuizTaker/QuizTaken";
 import AdminDash from "./components/Dashboard/AdminDash"
+import Created from "./components/Dashboard/Created"
+import Results from "./components/Dashboard/Results"
 
 class App extends Component {
   constructor(props) {
@@ -130,6 +132,27 @@ class App extends Component {
                 checkLogin={this.checkLogin}
                 onLogout={this.handleLogout}
               />
+            )}
+          />
+
+          
+
+          <Route
+            exact
+            path="/created"
+            render={(props) => (
+              
+              <Created
+                {...props}
+                isLoggedIn={this.state.isLoggedIn}
+                checkLogin={this.checkLogin}
+                onLogout={this.handleLogout}
+                user={this.state.user}
+                quizzes={this.state.quizzes}
+                onQuizLoad={this.handleQuizzesCreated}
+                onUserUpdate={this.handleUserUpdate}
+              /> 
+             
             )}
           />
           <Route
