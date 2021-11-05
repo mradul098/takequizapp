@@ -28,7 +28,7 @@ const QuizDone = (props) => {
                 color: "var(--quizden-dark-purple)",
               }}
             >
-              Quizzer
+              Takequiz
             </span>
             !
           </div>

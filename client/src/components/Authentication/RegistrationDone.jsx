@@ -28,7 +28,7 @@ const RegistrationDone = (props) => {
                 color: "var(--quizden-dark-purple)",
               }}
             >
-              Quizzer
+              Takequiz
             </span>
             !
           </div>

@@ -2,7 +2,7 @@ const Joi = require("@hapi/joi");
 
 const Quiz = require("../model/Quiz");
 const User = require("../model/User");
-const QuizzerController = require("./QuizzerController");
+const TakequizController = require("./TakequizController");
 
 const QuizController = {
   createQuiz: async (req, res, next) => {
@@ -28,11 +28,11 @@ const QuizController = {
       // return res.status(200).send("HU");
       const savedQuiz = await quiz.save();
 
-      const quizzer = QuizzerController.incrementCuratedCount(user_id);
+      const quizzer = TakequizController.incrementCuratedCount(user_id);
       if (quizzer) {
         return res.status(200).send(savedQuiz);
       }
-      return res.status(400).send("Quizzer Does not exist.");
+      return res.status(400).send("Takequiz Does not exist.");
     } catch (err) {
       console.log("Error", err);
       return res.status(400).send("Does not exist.");
@@ -116,7 +116,7 @@ const QuizController = {
         const updatedQuiz = await Quiz.findByIdAndUpdate(quiz_id, quiz);
         //console.log(updatedQuiz)
         // update quizzer stats
-        const updatedQuizzer = await QuizzerController.incrementParticipationCount(
+        const updatedTakequiz = await TakequizController.incrementParticipationCount(
           user_id,
           solved === questions.length
         );

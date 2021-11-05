@@ -1,10 +1,10 @@
 const Joi = require("@hapi/joi");
 
-const Quizzer = require("../model/Quizzer");
+const Takequiz = require("../model/Takequiz");
 
-const QuizzerController = {
-  createQuizzer: async (req, res, next) => {
-    // console.log("From Quizzer", req.body);
+const TakequizController = {
+  createTakequiz: async (req, res, next) => {
+    // console.log("From Takequiz", req.body);
     const { _id, name, email } = req.body;
     const quizzerSchema = Joi.object({
       id: Joi.string().required(),
@@ -20,14 +20,14 @@ const QuizzerController = {
       // if (error)
       //   return res.status(400).send("[validation error] Invalid data given.");
 
-      // create Quizzer
-      const quizzer = new Quizzer({
+      // create Takequiz
+      const quizzer = new Takequiz({
         _id: _id,
         name: name,
         email: email,
       });
-      const savedQuizzer = await quizzer.save();
-      return res.status(200).send(savedQuizzer);
+      const savedTakequiz = await quizzer.save();
+      return res.status(200).send(savedTakequiz);
     } catch (err) {
       console.log("Error", err);
       return res.status(400).send("Does not exist.");
@@ -36,7 +36,7 @@ const QuizzerController = {
 
   get: async (req, res, next) => {
     try {
-      const quizzer = await Quizzer.findOne({ _id: req.params.id });
+      const quizzer = await Takequiz.findOne({ _id: req.params.id });
       if (quizzer) {
         const {
           _id,
@@ -64,7 +64,7 @@ const QuizzerController = {
   },
   findAll: async (req, res, next) => {
     try {
-      const quizzers = await Quizzer.find();
+      const quizzers = await Takequiz.find();
       return res.status(200).send(quizzers);
     } catch (err) {
       console.log("Error", err);
@@ -73,7 +73,7 @@ const QuizzerController = {
   },
   incrementCuratedCount: async (user_id) => {
     try {
-      const quzzier = await Quizzer.findByIdAndUpdate(user_id, {
+      const quzzier = await Takequiz.findByIdAndUpdate(user_id, {
         $inc: { quizCurated: 1 },
       });
       return quzzier;
@@ -84,23 +84,23 @@ const QuizzerController = {
   },
   incrementParticipationCount: async (user_id, flawless) => {
     try {
-      const quizzer = await Quizzer.findById(user_id);
+      const quizzer = await Takequiz.findById(user_id);
 
       quizzer.quizAttended++;
       quizzer.quizFlawless += flawless; // + 0 or 1
 
-      const updatedQuizzer = await Quizzer.findByIdAndUpdate(user_id, quizzer);
-      // const result1 = await Quizzer.findByIdAndUpdate(user_id, {
+      const updatedTakequiz = await Takequiz.findByIdAndUpdate(user_id, quizzer);
+      // const result1 = await Takequiz.findByIdAndUpdate(user_id, {
       //   $inc: { quizAttended: 1 },
       // });
-      // const result2 = await Quizzer.findByIdAndUpdate(user_id, {
+      // const result2 = await Takequiz.findByIdAndUpdate(user_id, {
       //   $inc: { quizFlawless: flawless },
       // });
-      return updatedQuizzer;
+      return updatedTakequiz;
     } catch (err) {
       console.log("Error", err);
       return false;
     }
   },
 };
-module.exports = QuizzerController;
+module.exports = TakequizController;

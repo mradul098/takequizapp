@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavBar from "../Layout/NavBar";
 import { Link, Redirect } from "react-router-dom";
 import AuthService from "../../service/AuthService";
-import QuizzerService from "../../service/QuizzerService";
+import TakequizService from "../../service/TakequizService";
 import AuthError from "../Layout/AuthError";
 
 class Login extends Component {
@@ -33,8 +33,8 @@ class Login extends Component {
         sessionStorage.setItem("quizden-authToken", response.authToken);
         sessionStorage.setItem("quizden-user-id", response._id);
 
-        // get Quizzer profile
-        QuizzerService.getQuizzer(response._id, response.authToken).then(
+        // get Takequiz profile
+        TakequizService.getTakequiz(response._id, response.authToken).then(
           (response) => {
             if (response === false) {
               this.setState({ error: true });

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const AuthController = require("../controller/AuthController");
-const QuizzerController = require("../controller/QuizzerController");
+const TakequizController = require("../controller/TakequizController");
 
 // router.get("/", AuthController.verifyToken, (req, res, next) => {
 //   res.send("Hello From AUTH!");
@@ -19,7 +19,7 @@ router.post("/registration", async (req, res, next) => {
   console.log("resutration");
   req.body = await AuthController.registerUser(req, res, next);
   // creating the quizzer profile
-  await QuizzerController.createQuizzer(req, res, next);
+  await TakequizController.createTakequiz(req, res, next);
 });
 
 module.exports = router;

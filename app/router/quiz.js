@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const AuthController = require("../controller/AuthController");
-const QuizzerController = require("../controller/QuizzerController");
+const TakequizController = require("../controller/TakequizController");
 const QuizController = require("../controller/QuizController");
 
 router.post(
@@ -13,7 +13,7 @@ router.post(
 );
 
 router.get("/", AuthController.verifyToken, async (req, res, next) => {
-  console.log("Get Quizzer Data");
+  console.log("Get Takequiz Data");
   await QuizController.findAll(req, res, next);
 });
 

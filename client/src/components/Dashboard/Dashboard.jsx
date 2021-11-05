@@ -6,7 +6,7 @@ import Tools from "./Tools";
 import CuratedQuizList from "./CuratedQuizList";
 import CuratedResultList from "./CuratedResultList";
 import QuizService from "../../service/QuizService";
-import QuizzerService from "../../service/QuizzerService";
+import TakequizService from "../../service/TakequizService";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -21,8 +21,8 @@ class Dashboard extends Component {
     const authToken = sessionStorage.getItem("quizden-authToken");
     const user_id = sessionStorage.getItem("quizden-user-id");
 
-    // get Quizzer profile
-    QuizzerService.getQuizzer(user_id, authToken).then((response) => {
+    // get Takequiz profile
+    TakequizService.getTakequiz(user_id, authToken).then((response) => {
       if (response === false) {
       } else {
         this.setState({ user: response });
@@ -66,7 +66,7 @@ class Dashboard extends Component {
             {/* Tools section  */}
             <Tools
               classes="col-sm-6 ml-4 section tools"
-              title="Quizzer Tools"
+              title="Takequiz Tools"
               // subtitle="Some tools may only be available in Pro License"
             />
             {/* Tools section  end*/}
