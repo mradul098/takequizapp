@@ -17,7 +17,7 @@ const QuizDone = (props) => {
             style={{
               fontFamily: `'Lexend Deca', sans-serif`,
               fontSize: "36px",
-              color: "var(--quizden-light)",
+              color: "var(--patterq-light)",
               marginTop: "30vh",
               textAlign: "center",
             }}

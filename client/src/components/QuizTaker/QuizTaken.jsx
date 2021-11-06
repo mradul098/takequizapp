@@ -21,7 +21,7 @@ const QuizTaken = (props) => {
             style={{
               fontFamily: `'Lexend Deca', sans-serif`,
               fontSize: "36px",
-              color: "var(--quizden-light)",
+              color: "var(--patterq-light)",
               marginTop: "30vh",
               textAlign: "center",
             }}
@@ -29,7 +29,7 @@ const QuizTaken = (props) => {
             Your score is {quiz.solved} / {quiz.total_questions}
             {/* <span
               style={{
-                color: "var(--quizden-dark-purple)",
+                color: "var(--patterq-dark-purple)",
               }}
             >
               Takequiz
@@ -42,7 +42,7 @@ const QuizTaken = (props) => {
             style={{
               fontFamily: `'Roboto', sans-serif`,
               fontSize: "18px",
-              color: "var(--quizden-light-purple)",
+              color: "var(--patterq-light-purple)",
               textAlign: "center",
             }}
           >

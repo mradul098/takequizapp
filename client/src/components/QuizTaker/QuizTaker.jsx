@@ -104,7 +104,7 @@ class QuizTaker extends Component {
                   width: "max-content",
                 }}
               >
-                <span style={{ color: "var(--quizden-bg-dark)" }}>
+                <span style={{ color: "var(--patterq-bg-dark)" }}>
                   Quiz Type:{" "}
                 </span>
                 {quiz.type}

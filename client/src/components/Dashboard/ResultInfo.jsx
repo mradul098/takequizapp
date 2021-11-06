@@ -20,7 +20,7 @@ const ResultInfo = (props) => {
           className="option-name"
           style={{
             fontFamily: `"Lexend Deca", sans-serif`,
-            color: "var(--quizden-bg-dark)",
+            color: "var(--patterq-bg-dark)",
           }}
         >
           {props.id}
@@ -29,7 +29,7 @@ const ResultInfo = (props) => {
           className="option-name"
           style={{
             fontFamily: `"Lexend Deca", sans-serif`,
-            color: "var(--quizden-bg-dark)",
+            color: "var(--patterq-bg-dark)",
           }}
         >
           {props.title}
@@ -38,14 +38,14 @@ const ResultInfo = (props) => {
         
         <td
           className="option-dropdown"
-          style={{ color: "var(--quizden-bg-dark" }}
+          style={{ color: "var(--patterq-bg-dark" }}
         >
           {props.name}
           {/* {console.log(props)} */}
         </td>
         <td
           className="option-dropdown"
-          style={{ color: "var(--quizden-bg-dark" }}
+          style={{ color: "var(--patterq-bg-dark" }}
         >
           {props.score}
         </td>

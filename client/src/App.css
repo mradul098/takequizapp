@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 
 :root {
-  --quizden-light-purple: #a30a0a;
-  --quizden-dark-purple: #a18cfc;
-  --quizden-deep-purple: #2e943c;
-  --quizden-darker-purple: #381d0d;
-  --quizden-bg-dark: #040404;
-  --quizden-light: #f2f2f2;
+  --patterq-light-purple: #a30a0a;
+  --patterq-dark-purple: #a18cfc;
+  --patterq-deep-purple: #2d5e33;
+  --patterq-brwn: #aa8572;
+  --patterq-bg-dark: #040404;
+  --patterq-light: #f2f2f2;
 }
 
 .App {
@@ -59,7 +59,7 @@
 .button {
   font-family:"Times New Roman", Times, serif;
   font-size: medium;
-  color: var(--quizden-light);
+  color: var(--patterq-light);
   background: none;
   border: none;
 }
@@ -69,16 +69,16 @@
   height: 36px;
   border-radius: 8px;
   border-style: none;
-  background-color: var(--quizden-bg-dark);
+  background-color: var(--patterq-bg-dark);
 }
 .login-button:hover {
-  color: var(--quizden-bg-dark);
-  background-color: var(--quizden-light);
+  color: var(--patterq-bg-dark);
+  background-color: var(--patterq-light);
 }
 .login-button:active {
-  color: var(--quizden-light);
-  border: 2px solid var(--quizden-light);
-  background-color: var(--quizden-bg-dark);
+  color: var(--patterq-light);
+  border: 2px solid var(--patterq-light);
+  background-color: var(--patterq-bg-dark);
 }
 
 .register-button {
@@ -86,15 +86,15 @@
   height: 36px;
   border-radius: 8px;
   border-style: none;
-  background-color: var(--quizden-deep-purple);
+  background-color: var(--patterq-deep-purple);
 }
 
 .register-button:hover {
-  background-color: var(--quizden-dark-purple);
+  background-color: var(--patterq-dark-purple);
 }
 .register-button:active {
-  border: 2px solid var(--quizden-deep-purple);
-  background-color: var(--quizden-bg-dark);
+  border: 2px solid var(--patterq-deep-purple);
+  background-color: var(--patterq-bg-dark);
 }
 
 .jumbo {
@@ -107,7 +107,7 @@
 
 .jumbo-subtitle {
   text-align: center;
-  color: var(--quizden-light-purple);
+  color: var(--patterq-light-purple);
   font-size: larger;
 }
 
@@ -116,45 +116,45 @@
   height: 48px;
   border-radius: 8px;
   border-style: none;
-  background-color: var(--quizden-deep-purple);
+  background-color: var(--patterq-deep-purple);
 }
 
 .demo-button:hover {
-  border: 2px solid var(--quizden-deep-purple);
+  border: 2px solid var(--patterq-deep-purple);
   background: none;
 }
 
 .demo-button:active {
-  border: 2px solid var(--quizden-deep-purple);
-  background-color: var(--quizden-light);
-  color: var(--quizden-bg-dark);
+  border: 2px solid var(--patterq-deep-purple);
+  background-color: var(--patterq-light);
+  color: var(--patterq-bg-dark);
 }
 
 .back-to-home {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
-  color: var(--quizden-light-purple);
+  color: var(--patterq-light-purple);
   text-decoration-line: underline;
 }
 
 .auth-title {
   font-family:"Times New Roman", Times, serif;
   font-size: 2em;
-  color: var(--quizden-light);
+  color: var(--patterq-light);
 }
 
 .input-label {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
-  color: var(--quizden-light);
+  color: var(--patterq-light);
 }
 
 .input-field {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: bold;
-  color: var(--quizden-bg-dark);
-  /* background-color: var(--quizden-light-purple); */
+  color: var(--patterq-bg-dark);
+  /* background-color: var(--patterq-light-purple); */
   border: none;
 }
 
@@ -168,7 +168,7 @@
   height: 42px;
   border-radius: 8px;
   border-style: none;
-  background-color: var(--quizden-deep-purple);
+  background-color: var(--patterq-deep-purple);
 }
 
 .logout-button {
@@ -176,19 +176,19 @@
   height: 36px;
   border-radius: 8px;
   border-style: none;
-  color: var(--quizden-bg-dark);
-  background-color: var(--quizden-light);
+  color: var(--patterq-bg-dark);
+  background-color: var(--patterq-light);
 }
 
 .logout-button:hover {
-  color: var(--quizden-light);
+  color: var(--patterq-light);
   background-color: crimson;
 }
 
 .logout-button:active {
-  color: var(--quizden-light);
+  color: var(--patterq-light);
   border: 2px solid crimson;
-  background-color: var(--quizden-bg-dark);
+  background-color: var(--patterq-bg-dark);
 }
 
 .section {
@@ -206,7 +206,7 @@
 }
 
 .profile-name {
-  color: var(--quizden-bg-dark);
+  color: var(--patterq-bg-dark);
   font-family:"Times New Roman", Times, serif;
   font-size: 22px;
   font-weight: bold;
@@ -222,7 +222,7 @@
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: bold;
-  color: var(--quizden-deep-purple);
+  color: var(--patterq-deep-purple);
   margin-top: 10px;
 }
 
@@ -237,10 +237,10 @@
 /* .tool-button {
   font-family:"Times New Roman", Times, serif;
   font-size: 18px;
-  color: var(--quizden-light);
+  color: var(--patterq-light);
   border-radius: 4px;
   border-style: none;
-  background-color: var(--quizden-darker-purple);
+  background-color: var(--patterq-brwn);
   width: 180px;
   height: 60px;
   margin-left: 16px;
@@ -249,10 +249,10 @@
 .tool-button {
   font-family:"Times New Roman", Times, serif;
   font-size: 18px;
-  color: var(--quizden-light);
+  color: var(--patterq-light);
   border-radius: 4px;
   border-style: none;
-  background-color: var(--quizden-darker-purple);
+  background-color: var(--patterq-brwn);
   width: max-content;
   height: max-content;
   margin-top: 10px;
@@ -269,7 +269,7 @@
 }
 
 .tool-button:active {
-  background-color: var(--quizden-bg-dark);
+  background-color: var(--patterq-bg-dark);
 }
 
 .grayed {
@@ -292,7 +292,7 @@
 }
 
 .tooltip-wrapper .tool-tip {
-  background-color: var(--quizden-light);
+  background-color: var(--patterq-light);
   padding: 16px;
   width: 240px;
   z-index: 1;
@@ -318,12 +318,12 @@
 }
 
 .input-quiz-title:hover {
-  border-bottom: 2px solid var(--quizden-bg-dark);
+  border-bottom: 2px solid var(--patterq-bg-dark);
 }
 
 .input-quiz-title:active,
 .input-quiz-title:focus {
-  border-bottom: 2px solid var(--quizden-deep-purple);
+  border-bottom: 2px solid var(--patterq-deep-purple);
 }
 
 .input-quiz-desc {
@@ -333,12 +333,12 @@
 }
 
 .input-quiz-desc:hover {
-  border-bottom: 2px solid var(--quizden-bg-dark);
+  border-bottom: 2px solid var(--patterq-bg-dark);
 }
 
 .input-quiz-desc:active,
 .input-quiz-desc:focus {
-  border-bottom: 2px solid var(--quizden-deep-purple);
+  border-bottom: 2px solid var(--patterq-deep-purple);
 }
 
 input:focus,
@@ -355,12 +355,12 @@ button:focus {
 }
 
 .input-question-title:hover {
-  border-bottom: 2px solid var(--quizden-bg-dark);
+  border-bottom: 2px solid var(--patterq-bg-dark);
 }
 
 .input-question-title:active,
 .input-question-title:focus {
-  border-bottom: 2px solid var(--quizden-deep-purple);
+  border-bottom: 2px solid var(--patterq-deep-purple);
 }
 
 .option-name {
@@ -372,7 +372,7 @@ button:focus {
   font-family:"Times New Roman", Times, serif;
   font-size: 18px;
   font-weight: bold;
-  color: var(--quizden-darker-purple);
+  color: var(--patterq-brwn);
   background: none;
   border: none;
   width: 10em;
@@ -386,7 +386,7 @@ button:focus {
   font-family:"Times New Roman", Times, serif;
   font-size: 18px;
   font-weight: bold;
-  color: var(--quizden-darker-purple);
+  color: var(--patterq-brwn);
   background: none;
   border: none;
   margin-top: 8px;
@@ -397,7 +397,7 @@ button:focus {
   background: none;
   letter-spacing: 0.03em;
   border: none;
-  border-bottom: 2px solid var(--quizden-light-purple);
+  border-bottom: 2px solid var(--patterq-light-purple);
   width: calc(44vw);
   margin-left: 1em;
   margin-right: 1em;
@@ -407,17 +407,17 @@ button:focus {
 .option-input:hover,
 .option-input:active,
 .option-input:focus {
-  border-bottom: 2px solid var(--quizden-dark-purple);
+  border-bottom: 2px solid var(--patterq-dark-purple);
 }
 
 .remove-button {
   width: max-content;
   height: max-content;
-  background-color: var(--quizden-deep-purple);
+  background-color: var(--patterq-deep-purple);
   border: none;
   padding: 10px;
   font-family: "Roboto", sans-serif;
-  color: var(--quizden-light);
+  color: var(--patterq-light);
   border-radius: 6px;
   margin-top: 10px;
   margin-left: 20px;
@@ -432,21 +432,21 @@ button:focus {
 .add-button {
   width: max-content;
   height: max-content;
-  background-color: var(--quizden-deep-purple);
+  background-color: var(--patterq-deep-purple);
   border: none;
   padding: 10px;
   font-family: "Roboto", sans-serif;
-  color: var(--quizden-light);
+  color: var(--patterq-light);
   border-radius: 6px;
   margin-top: 10px;
   margin-left: 20px;
 }
 
 .add-button:hover {
-  background-color: var(--quizden-darker-purple);
+  background-color: var(--patterq-brwn);
 }
 .add-button:active {
-  background-color: var(--quizden-bg-dark);
+  background-color: var(--patterq-bg-dark);
 }
 
 .remove-option-button {
@@ -468,11 +468,11 @@ button:focus {
 .select-answer-dropdown {
   width: 8em;
   height: max-content;
-  background-color: var(--quizden-deep-purple);
+  background-color: var(--patterq-deep-purple);
   border: none;
   padding: 10px;
   font-family: "Roboto", sans-serif;
-  color: var(--quizden-light);
+  color: var(--patterq-light);
   border-radius: 6px;
   margin-top: 10px;
   margin-left: 20px;
@@ -499,7 +499,7 @@ table {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  color: var(--quizden-light);
+  color: var(--patterq-light);
   border-radius: 4px;
   border-style: none;
   background-color: #443e47;

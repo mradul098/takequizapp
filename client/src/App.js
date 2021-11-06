@@ -19,7 +19,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     const loginStatus =
-      sessionStorage.getItem("quizden-isLoggedIn") === "LOGGED_IN"
+      sessionStorage.getItem("patterq-isLoggedIn") === "LOGGED_IN"
         ? "LOGGED_IN"
         : "NOT_LOGGED_IN";
     this.state = {
@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   checkLogin = () => {
-    return sessionStorage.getItem("quizden-isLoggedIn") === "LOGGED_IN";
+    return sessionStorage.getItem("patterq-isLoggedIn") === "LOGGED_IN";
   };
 
   // updates the user data globally after Login is successful
@@ -47,9 +47,9 @@ class App extends Component {
     this.setState({
       isLoggedIn: "LOGGED_IN",
       user: { ...response },
-      authToken: sessionStorage.getItem("quizden-authToken"),
+      authToken: sessionStorage.getItem("patterq-authToken"),
     });
-    sessionStorage.setItem("quizden-isLoggedIn", "LOGGED_IN");
+    sessionStorage.setItem("patterq-isLoggedIn", "LOGGED_IN");
   };
 
   handleUserUpdate = (response) => {
@@ -60,8 +60,8 @@ class App extends Component {
 
   handleLogout = (event) => {
     this.setState({ isLoggedIn: "NOT_LOGGED_IN" });
-    sessionStorage.setItem("quizden-isLoggedIn", "");
-    sessionStorage.setItem("quizden-authToken", "");
+    sessionStorage.setItem("patterq-isLoggedIn", "");
+    sessionStorage.setItem("patterq-authToken", "");
   };
 
   handleQuizzesCreated = (quizzes) => {

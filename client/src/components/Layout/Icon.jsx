@@ -1,15 +1,15 @@
 import React from "react";
-import QuizDenLogo from "../../assets/loogo.png";
+import patterqLogo from "../../assets/loogo.png";
 
 const Icon = (props) => {
   return (
     <React.Fragment>
       <img
-        src={QuizDenLogo}
+        src={patterqLogo}
         style={{
           width: props.size,
         }}
-        alt="QuizDen Logo"
+        alt="patterq Logo"
       />
     </React.Fragment>
   );

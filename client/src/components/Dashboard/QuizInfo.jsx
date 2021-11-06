@@ -20,7 +20,7 @@ const QuizInfo = (props) => {
           className="option-name"
           style={{
             fontFamily: `"Times New Roman", sans-serif`,
-            color: "var(--quizden-bg-dark)",
+            color: "var(--patterq-bg-dark)",
           }}
         >
           {props.title}
@@ -36,7 +36,7 @@ const QuizInfo = (props) => {
         </td>
         <td
           className="option-dropdown"
-          style={{ color: "var(--quizden-bg-dark)" }}
+          style={{ color: "var(--patterq-bg-dark)" }}
         >
           {props.participated}
         </td>
@@ -59,7 +59,7 @@ const QuizInfo = (props) => {
         </td>
         <td
           className="option-dropdown"
-          style={{ color: "var(--quizden-bg-dark" }}
+          style={{ color: "var(--patterq-bg-dark" }}
         >
           {/* <Link to="/result">View  Result</Link> */}
         </td>
@@ -68,13 +68,13 @@ const QuizInfo = (props) => {
         <div className="col-sm-5 option-name">{props.title}</div>
         <div
           className="col-sm-2 option-dropdown"
-          style={{ color: "var(--quizden-bg-dark" }}
+          style={{ color: "var(--patterq-bg-dark" }}
         >
           {props.participated}
         </div>
         <div
           className="col-sm-2 option-dropdown"
-          style={{ color: "var(--quizden-bg-dark" }}
+          style={{ color: "var(--patterq-bg-dark" }}
         >
           {props.flawless}
         </div>

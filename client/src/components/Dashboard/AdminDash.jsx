@@ -21,8 +21,8 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    const authToken = sessionStorage.getItem("quizden-authToken");
-    const user_id = sessionStorage.getItem("quizden-user-id");
+    const authToken = sessionStorage.getItem("patterq-authToken");
+    const user_id = sessionStorage.getItem("patterq-user-id");
 
     // get Takequiz profile
     TakequizService.getTakequiz(user_id, authToken).then((response) => {
@@ -35,7 +35,7 @@ class Dashboard extends Component {
   }
 
   getQuizzes = () => {
-    const user_id = sessionStorage.getItem("quizden-user-id");
+    const user_id = sessionStorage.getItem("patterq-user-id");
     QuizService.findByUser(user_id).then((response) => {
       if (response === false) {
       } else {

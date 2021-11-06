@@ -27,7 +27,7 @@ const QuizQuestion = (props) => {
                   width: "max-content",
                   marginTop: ".2em",
                   marginLeft: ".5em",
-                  color: "var(--quizden-bg-dark)",
+                  color: "var(--patterq-bg-dark)",
                 }}
                 onChange={handleSelectAnswer}
               >
