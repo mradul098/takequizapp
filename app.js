@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const cors = require("cors");
 require("dotenv/config");
+const nodemailer = require('nodemailer');
 
 app.use(
   cors({
@@ -19,6 +20,9 @@ const routes = require("./app/routes");
 
 // route middleware
 app.use(routes);
+
+
+
 
 // fallback for react routes
 app.get("*", (req, res) => {

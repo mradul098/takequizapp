@@ -22,7 +22,8 @@
     "express": "^4.17.1",
     "express-joi-validation": "^4.0.4-beta.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.9"
+    "mongoose": "^5.13.9",
+    "nodemailer": "^6.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

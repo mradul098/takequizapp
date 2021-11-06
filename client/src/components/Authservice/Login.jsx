@@ -88,7 +88,7 @@ class Login extends Component {
               <div className="row mt-4">
                 <div className="col-sm-4 offset-sm-4">
                   <label className="input-label" htmlFor="inputEmail">
-                    Email address
+                    Email
                   </label>
                   <input
                     required="required"

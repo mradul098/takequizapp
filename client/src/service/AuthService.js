@@ -13,6 +13,17 @@ const AuthService = {
         return false;
       });
   },
+  send: async (request) => {
+    return await axios
+      .post("/api/v1/auth/send", request)
+      .then((response) => {
+        return true;
+      })
+      .catch((err) => {
+        console.log("Reosoe is false");
+        return false;
+      });
+  },
   login: async (request) => {
     return await axios
       .post("/api/v1/auth/login", request)
