@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import NavBar from "../Layout/NavBar";
+import NavBar from "../Format/NavBar";
 import { Redirect } from "react-router-dom";
 import QuizQuestion from "./QuizQuestion";
-import Emoji from "../Layout/Emoji";
+import Emoji from "../Format/Emoji";
 import QuizService from "../../service/QuizService";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 // import Quiz from "../model/Quiz";

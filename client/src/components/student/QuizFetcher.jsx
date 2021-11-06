@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import NavBar from "../Layout/NavBar";
+import NavBar from "../Format/NavBar";
 import { Link, Redirect } from "react-router-dom";
-import Emoji from "../Layout/Emoji";
+import Emoji from "../Format/Emoji";
 import QuizService from "../../service/QuizService";
 import QuizHeader from "./QuizHeader";
 import ToolTip from "../Dashboard/ToolTip";

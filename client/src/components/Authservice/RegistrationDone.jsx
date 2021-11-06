@@ -1,8 +1,8 @@
 import React from "react";
-import NavBar from "../Layout/NavBar";
+import NavBar from "../Format/NavBar";
 import { Link } from "react-router-dom";
 
-const QuizDone = (props) => {
+const RegistrationDone = (props) => {
   return (
     <React.Fragment>
       <NavBar
@@ -22,38 +22,37 @@ const QuizDone = (props) => {
               textAlign: "center",
             }}
           >
-            Quiz is Created
-           
-            
+            Congratulations! You are now a{" "}
+            <span
+              style={{
+                color: "var(--patterq-dark-purple)",
+              }}
+            >
+              Takequiz
+            </span>
+            !
           </div>
         </div>
         <div className="row">
           <div
-            className="col-sm-12"
-            style={{
-              fontFamily: `'Roboto', sans-serif`,
-              fontSize: "28px",
-              color: "pink",
-              textAlign: "center",
-            }}
-          >
-            Your quiz id is {props.location.state.quiz_id}
-          </div>
-        </div>
-        <div className="row mt-5">
-          <div
-            className="col-sm-12"
+            className="col-sm-12 mt-5"
             style={{
               textAlign: "center",
             }}
           >
-            
+            <Link to="/login">
+              <span className="back-to-home ">
+                <span role="img" aria-label="man-walking">
+                  🚶
+                </span>{" "}
+                Go to Login
+              </span>
+            </Link>
           </div>
         </div>
-     
       </div>
     </React.Fragment>
   );
 };
 
-export default QuizDone;
+export default RegistrationDone;

@@ -1,5 +1,5 @@
 import React from "react";
-import Emoji from "../Layout/Emoji";
+import Emoji from "../Format/Emoji";
 import DateUtil from "../../Utils/DateUtil";
 import { Link, Redirect } from "react-router-dom";
 

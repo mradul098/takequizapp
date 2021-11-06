@@ -1,6 +1,6 @@
 import React, { Component ,useEffect, useState }  from "react";
 import { Redirect } from "react-router-dom";
-import NavBar from "../Layout/NavBar";
+import NavBar from "../Format/NavBar";
 import Profile from "./Profile";
 import Tools from "./Tools";
 import CreatedQuizList from "./CreatedQuizList";

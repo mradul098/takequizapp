@@ -1,24 +1,19 @@
 import React, { Component } from "react";
-import NavBar from "../Layout/NavBar";
+import NavBar from "../Format/NavBar";
 import { Link, Redirect } from "react-router-dom";
 import AuthService from "../../service/AuthService";
-import AuthError from "../Layout/AuthError";
+import TakequizService from "../../service/TakequizService";
+import AuthError from "../Format/AuthError";
 
-class Registration extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
       email: "",
       password: "",
-      // role:"",
       error: false,
     };
   }
-
-  handleNameChange = (e) => {
-    this.setState({ name: e.target.value, error: false });
-  };
 
   handleEmailChange = (e) => {
     this.setState({ email: e.target.value, error: false });
@@ -28,33 +23,36 @@ class Registration extends Component {
     this.setState({ password: e.target.value, error: false });
   };
 
-  handleRoleChange = (e) => {
-    this.setState({ role: e.target.value, error: false });
-  };
-
-  handleRegistrationSubmit = (e) => {
+  handleLoginSubmit = (e) => {
     e.preventDefault();
-    const { name, email, password } = this.state;
-    AuthService.register({ name, email, password }).then((response) => {
+    const { email, password } = this.state;
+    AuthService.login({ email, password }).then((response) => {
       if (response === false) {
         this.setState({ error: true });
       } else {
-        alert("Account created Successfully")
-        this.props.history.push("/login");
+        sessionStorage.setItem("patterq-authToken", response.authToken);
+        sessionStorage.setItem("patterq-user-id", response._id);
+
+        // get Takequiz profile
+        TakequizService.getTakequiz(response._id, response.authToken).then(
+          (response) => {
+            if (response === false) {
+              this.setState({ error: true });
+            } else {
+              this.props.onLogin(response);
+              this.props.history.push("/dashboard");
+            }
+          }
+        );
       }
     });
   };
-  radioClick=(e) => {
-    console.log(e.target.value)
-  }
+
   render() {
     // console.log("register", sessionStorage.getItem("isLoggedIn"));
     if (this.props.checkLogin()) {
       return <Redirect to={{ pathname: "/dashboard" }} />;
     }
-    // if (sessionStorage.getItem("isLoggedIn") === "true") {
-    //   return <Redirect to={{ pathname: "/dashboard" }} />;
-    // }
     return (
       <React.Fragment>
         {/* <NavBar
@@ -73,7 +71,6 @@ class Registration extends Component {
                       width: "20%",
                       height: "42px",
                     }}
-                    onClick={this.handleRegistration} 
                   >
                     Home
                   </button>
@@ -82,29 +79,11 @@ class Registration extends Component {
           </div>
           <div className="row">
             <div className="col-sm-8 offset-sm-4">
-              <div className="auth-title mt-1">Register</div>
+              <div className="auth-title mt-1">Login</div>
             </div>
           </div>
-          <form onSubmit={this.handleRegistrationSubmit}>
+          <form onSubmit={this.handleLoginSubmit}>
             <div className="form-group">
-              {/* name */}
-              <div className="row mt-4">
-                <div className="col-sm-4 offset-sm-4">
-                  <label className="input-label" htmlFor="inputName">
-                    Name
-                  </label>
-                  <input
-                    required="required"
-                    type="text"
-                    className="form-control input-field"
-                    aria-describedby="emailInput"
-                    placeholder="John Doe"
-                    value={this.state.name}
-                    onChange={this.handleNameChange}
-                  />
-                </div>
-              </div>
-
               {/* email */}
               <div className="row mt-4">
                 <div className="col-sm-4 offset-sm-4">
@@ -113,7 +92,7 @@ class Registration extends Component {
                   </label>
                   <input
                     required="required"
-                    type="email"
+                    type="text"
                     className="form-control input-field"
                     aria-describedby="emailInput"
                     placeholder="johndoe@email.com"
@@ -137,35 +116,12 @@ class Registration extends Component {
                     type="password"
                     className="form-control input-field"
                     aria-describedby="passwordInput"
-                    placeholder="strong password"
+                    placeholder="your password"
                     value={this.state.password}
                     onChange={this.handlePasswordChange}
                   />
                 </div>
               </div>
-
-              {/* role */}
-              {/* <div className="row mt-4">
-                <div
-                  className="col-sm-4 offset-sm-4"
-                  //   style={{ backgroundColor: "red" }}
-                >
-                  <label className="input-label" htmlFor="inputPassword">
-                    Role-Admin (Yes/No)
-                  </label>
-                  <input
-                    //required="required"
-                    type="text"
-                    className="form-control input-field"
-                    aria-describedby="Input"
-                    placeholder="Yes/No"
-                    value={this.state.role}
-                    //onChange={this.handleRoleChange}
-                  />
-                </div>
-              </div> */}
-              
-
               <div className="row mt-5">
                 <div className="col-sm-2 offset-sm-4">
                   <button
@@ -175,15 +131,14 @@ class Registration extends Component {
                       width: "100%",
                       height: "42px",
                     }}
-                    onClick={this.handleRegistration} 
                   >
-                    Register
+                    Login
                   </button>
                 </div>
-                
+               
               </div>
               {this.state.error && (
-                <AuthError text="Looks like you made a mistake. The email is probably taken." />
+                <AuthError text="Invalid credentials" />
               )}
             </div>
           </form>
@@ -193,4 +148,4 @@ class Registration extends Component {
   }
 }
 
-export default Registration;
+export default Login;

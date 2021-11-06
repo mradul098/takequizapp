@@ -1,7 +1,7 @@
 import React from "react";
 import DemoButton from "./DemoButton";
-import Icon from "../Layout/Icon";
-import NavBar from "../Layout/NavBar";
+import Icon from "../Format/Icon";
+import NavBar from "../Format/NavBar";
 import { Link, Redirect } from "react-router-dom";
 
 const Landing = (props) => {

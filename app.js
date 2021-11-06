@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "client", "build")));
 
 // import routes
-const routes = require("./app/router");
+const routes = require("./app/routes");
 
 // route middleware
 app.use(routes);

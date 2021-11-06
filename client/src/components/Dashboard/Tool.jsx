@@ -1,6 +1,6 @@
 import React from "react";
 import ToolTip from "./ToolTip";
-import Emoji from "../Layout/Emoji";
+import Emoji from "../Format/Emoji";
 
 const Tool = (props) => {
   return (

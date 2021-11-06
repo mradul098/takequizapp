@@ -1,8 +1,12 @@
 import React from "react";
-import NavBar from "../Layout/NavBar";
-import { Link } from "react-router-dom";
+import NavBar from "../Format/NavBar";
+import { Link, Redirect } from "react-router-dom";
 
-const RegistrationDone = (props) => {
+const QuizTaken = (props) => {
+  const { quiz } = props.location.state;
+  //   if (!props.quiz) {
+  //     return <Redirect to={{ pathname: "/dashboard" }} />;
+  //   }
   return (
     <React.Fragment>
       <NavBar
@@ -22,37 +26,37 @@ const RegistrationDone = (props) => {
               textAlign: "center",
             }}
           >
-            Congratulations! You are now a{" "}
-            <span
+            Your score is {quiz.solved} / {quiz.total_questions}
+            {/* <span
               style={{
                 color: "var(--patterq-dark-purple)",
               }}
             >
               Takequiz
-            </span>
-            !
+            </span> */}
           </div>
         </div>
-        <div className="row">
+        <div className="row pt-3">
           <div
-            className="col-sm-12 mt-5"
+            className="col-sm-12"
             style={{
+              fontFamily: `'Roboto', sans-serif`,
+              fontSize: "18px",
+              color: "var(--patterq-light-purple)",
               textAlign: "center",
             }}
           >
-            <Link to="/login">
-              <span className="back-to-home ">
-                <span role="img" aria-label="man-walking">
-                  🚶
-                </span>{" "}
-                Go to Login
-              </span>
-            </Link>
+        
           </div>
         </div>
+        
+       
+       
+             
+     
       </div>
     </React.Fragment>
   );
 };
 
-export default RegistrationDone;
+export default QuizTaken;

@@ -1,5 +1,5 @@
 import React from "react";
-import Emoji from "../Layout/Emoji";
+import Emoji from "../Format/Emoji";
 import ToolTip from "./ToolTip";
 import { Link } from "react-router-dom";
 import CountBox from "./CountBox";

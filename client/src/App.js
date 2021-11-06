@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
-import Landing from "./components/Landing/Landing";
+import Landing from "./components/Extras/Landing";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Registration from "./components/Authentication/Registration";
-import Login from "./components/Authentication/Login";
-import RegistrationDone from "./components/Authentication/RegistrationDone";
+import Registration from "./components/Authservice/Registration";
+import Login from "./components/Authservice/Login";
+import RegistrationDone from "./components/Authservice/RegistrationDone";
 import Dashboard from "./components/Dashboard/Dashboard";
-import QuizBuilder from "./components/QuizBuilder/QuizBuilder";
-import QuizDone from "./components/QuizBuilder/QuizDone";
-import QuizFetcher from "./components/QuizTaker/QuizFetcher";
-import QuizTaker from "./components/QuizTaker/QuizTaker";
-import QuizTaken from "./components/QuizTaker/QuizTaken";
+import QuizBuilder from "./components/creator/QuizBuilder";
+import QuizDone from "./components/creator/QuizDone";
+import QuizFetcher from "./components/student/QuizFetcher";
+import QuizTaker from "./components/student/QuizTaker";
+import QuizTaken from "./components/student/QuizTaken";
 import AdminDash from "./components/Dashboard/AdminDash"
 import Created from "./components/Dashboard/Created"
 import Results from "./components/Dashboard/Results"

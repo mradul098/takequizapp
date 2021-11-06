@@ -1,5 +1,5 @@
 import React from "react";
-import Emoji from "../Layout/Emoji";
+import Emoji from "../Format/Emoji";
 
 const ToolTip = (props) => {
   return (

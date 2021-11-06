@@ -1,12 +1,8 @@
 import React from "react";
-import NavBar from "../Layout/NavBar";
-import { Link, Redirect } from "react-router-dom";
+import NavBar from "../Format/NavBar";
+import { Link } from "react-router-dom";
 
-const QuizTaken = (props) => {
-  const { quiz } = props.location.state;
-  //   if (!props.quiz) {
-  //     return <Redirect to={{ pathname: "/dashboard" }} />;
-  //   }
+const QuizDone = (props) => {
   return (
     <React.Fragment>
       <NavBar
@@ -26,37 +22,38 @@ const QuizTaken = (props) => {
               textAlign: "center",
             }}
           >
-            Your score is {quiz.solved} / {quiz.total_questions}
-            {/* <span
-              style={{
-                color: "var(--patterq-dark-purple)",
-              }}
-            >
-              Takequiz
-            </span> */}
+            Quiz is Created
+           
+            
           </div>
         </div>
-        <div className="row pt-3">
+        <div className="row">
           <div
             className="col-sm-12"
             style={{
               fontFamily: `'Roboto', sans-serif`,
-              fontSize: "18px",
-              color: "var(--patterq-light-purple)",
+              fontSize: "28px",
+              color: "pink",
               textAlign: "center",
             }}
           >
-        
+            Your quiz id is {props.location.state.quiz_id}
           </div>
         </div>
-        
-       
-       
-             
+        <div className="row mt-5">
+          <div
+            className="col-sm-12"
+            style={{
+              textAlign: "center",
+            }}
+          >
+            
+          </div>
+        </div>
      
       </div>
     </React.Fragment>
   );
 };
 
-export default QuizTaken;
+export default QuizDone;
