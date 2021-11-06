@@ -31,7 +31,7 @@ const Option = (props) => {
                 className="remove-option-button"
                 onClick={handleOptionRemove}
               >
-                <Emoji emoji="⛔️" />
+                Delete Option
               </button>
             </div>
           </div>

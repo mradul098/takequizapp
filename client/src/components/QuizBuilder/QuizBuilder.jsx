@@ -11,14 +11,14 @@ class QuizBuilder extends Component {
     this.state = {
       title: "",
       description: "",
-      type: "",
+      type: "classic",
       time: "",
       questions: [],
     };
   }
 
   handleResetAll = (e) => {
-    this.setState({ title: "", description: "", type: "", questions: [] });
+    this.setState({ title: "", description: "", type: "classic", questions: [] });
   };
 
   handleTitleChange = (e) => {
@@ -171,21 +171,7 @@ class QuizBuilder extends Component {
                 value={this.state.time}
                 onChange={this.handleTimeChange}
               />
-              <div className="row mt-5 pl-3">
-                <select
-                  className="option-dropdown"
-                  value={this.state.type}
-                  onChange={this.handleTypeChange}
-                >
-                  <option value="" disabled hidden>
-                    Quiz Type
-                  </option>
-                  <option value="AMATEUR">Classic</option>
-                  {/* <option value="TIME_TRIAL" disabled>
-                    Time Trial (Under development)
-                  </option> */}
-                </select>
-              </div>
+             
             </div>
           </div>
           <div className="row mt-5">
@@ -212,13 +198,13 @@ class QuizBuilder extends Component {
               }}
             >
               <button className="tool-button" onClick={this.handleAddQuestion}>
-                <Emoji emoji="💣" /> Add Question
+               Add
               </button>
               <button className="tool-button" onClick={this.handleResetAll}>
-                <Emoji emoji="✂️" /> Reset Quiz
+               Reset
               </button>
               <button className="tool-button" onClick={this.handleSubmitQuiz}>
-                <Emoji emoji="🔨" /> Submit Quiz
+              Submit
               </button>
             </div>
           </div>

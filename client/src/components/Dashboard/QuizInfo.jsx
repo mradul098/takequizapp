@@ -11,7 +11,7 @@ const QuizInfo = (props) => {
           scope="row"
           className="counterCell"
           style={{
-            fontFamily: `"Lexend Deca", sans-serif`,
+            fontFamily: `"Times New Roman", sans-serif`,
             fontSize: "14px",
             fontWeight: "bold",
           }}
@@ -19,7 +19,7 @@ const QuizInfo = (props) => {
         <td
           className="option-name"
           style={{
-            fontFamily: `"Lexend Deca", sans-serif`,
+            fontFamily: `"Times New Roman", sans-serif`,
             color: "var(--quizden-bg-dark)",
           }}
         >
@@ -27,7 +27,7 @@ const QuizInfo = (props) => {
         </td>
         <td
           style={{
-            fontFamily: `"Roboto", sans-serif`,
+            fontFamily: `"Times New Roman", sans-serif`,
             color: "dimgray",
           }}
         >
@@ -36,19 +36,14 @@ const QuizInfo = (props) => {
         </td>
         <td
           className="option-dropdown"
-          style={{ color: "var(--quizden-bg-dark" }}
+          style={{ color: "var(--quizden-bg-dark)" }}
         >
           {props.participated}
         </td>
-        <td
-          className="option-dropdown"
-          style={{ color: "var(--quizden-bg-dark" }}
-        >
-          {props.flawless}
-        </td>
+        
         <td
           style={{
-            fontFamily: `"Lexend Deca", sans-serif`,
+            fontFamily: `"Times New Roman", sans-serif`,
             fontSize: "14px",
             fontWeight: "bold",
           }}
@@ -58,7 +53,7 @@ const QuizInfo = (props) => {
               margin: "8px",
             }}
           >
-            <Emoji emoji="🧲" />
+         
           </span>
           {props.id}
         </td>

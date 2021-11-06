@@ -192,14 +192,14 @@
 }
 
 .section {
-  background-color: var(--quizden-light);
-  border-radius: 4px;
+  background-color:rgb(158, 187, 190) ;
+  border-radius: 80px;
   padding: 26px;
   /* box-shadow: 6px 6px #f87d58; */
 }
 .section2 {
   background-color: rgb(158, 187, 190);
-  border-radius: 4px;
+  border-radius: 14px;
   padding: 50px;
   margin-right: -80px;
   /* box-shadow: 6px 6px #f87d58; */

@@ -85,20 +85,7 @@ class Dashboard extends Component {
               flawless={this.state.user.quizFlawless}
               // subtitle="Some tools may only be available in Pro License"
             />
-            
-            <CreatedQuizList
-              // use this class only if you're desperate: curated-quiz-section
-              classes="curated-quiz-section section"
-              quizzes={this.props.quizzes}
-            />
-            <br/>
-            <CreatedResultList
-              // use this class only if you're desperate: curated-quiz-section
-              classes="curated-quiz-section section"
-              quizzes={this.props.quizzes}
-              user={this.state.user}
-            />
-            {/* Tools section  end*/}
+       
           </div>
         </div>
       </React.Fragment>

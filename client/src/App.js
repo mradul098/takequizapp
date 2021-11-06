@@ -139,6 +139,24 @@ class App extends Component {
 
           <Route
             exact
+            path="/results"
+            render={(props) => (
+              
+              <Results
+                {...props}
+                isLoggedIn={this.state.isLoggedIn}
+                checkLogin={this.checkLogin}
+                onLogout={this.handleLogout}
+                user={this.state.user}
+                quizzes={this.state.quizzes}
+                onQuizLoad={this.handleQuizzesCreated}
+                onUserUpdate={this.handleUserUpdate}
+              /> 
+             
+            )}
+          />
+          <Route
+            exact
             path="/created"
             render={(props) => (
               
@@ -159,7 +177,7 @@ class App extends Component {
             exact
             path="/dashboard"
             render={(props) => (
-              this.state.user.email != "admin123@takequiz.com" ? 
+              this.state.user.email != "admin@gmail.com" ? 
               <Dashboard
                 {...props}
                 isLoggedIn={this.state.isLoggedIn}

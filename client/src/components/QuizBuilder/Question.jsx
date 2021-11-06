@@ -70,16 +70,16 @@ const Question = (props) => {
         </div>
         <div className="col-sm-2">
           <button
-            className="remove-button"
-            onClick={() => props.onRemove(question.id)}
-          >
-            <Emoji emoji="🗑️" /> Remove
-          </button>
-          <button
             className="add-button"
             onClick={() => props.onAddOption(question.id)}
           >
-            <Emoji emoji="✍️" /> Add Option
+            Add Option
+          </button>
+          <button
+            className="remove-button"
+            onClick={() => props.onRemove(question.id)}
+          >
+           Remove Question
           </button>
         </div>
       </div>

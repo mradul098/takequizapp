@@ -6,7 +6,7 @@ const NavBarAuth = (props) => {
 
   if (props.checkLogin()) {
     authSection = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav d-flex justify-content-center">
         <li className="nav-item">
           <Link to="/dashboard">
             <button className="button login-button mr-2">Dashboard</button>

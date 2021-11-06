@@ -1,69 +1,88 @@
-import React from "react";
-import Emoji from "../Layout/Emoji";
-import ToolTip from "./ToolTip";
-import { Link } from "react-router-dom";
-import CountBox from "./CountBox";
+import React, { Component ,useEffect, useState }  from "react";
+import { Redirect } from "react-router-dom";
+import NavBar from "../Layout/NavBar";
+import Profile from "./Profile";
+import Admintools from "./Admintools";
+import CreatedQuizList from "./CreatedQuizList";
+import CreatedResultList from "./CreatedResultList";
+import QuizService from "../../service/QuizService";
+import TakequizService from "../../service/TakequizService";
+// import { Button, ButtonToolbar, Modal } from 'react-bootstrap';
 
-const Tools = (props) => {
-  return (
-    <div className={props.classes}>
-        
-      <div className="profile-name">Admin Panel</div>
-     
-        <div className="row mt-4">
-          <div className="col-sm-4">
-            <CountBox title="Quizzes Created" number={props.curated} />
-          </div>
-         
-        </div>
-        
-      
-      {/* <div className="profile-email">{props.subtitle}</div> */}
-      <div className="row mt-4">
-        <div className="card">
 
-            
-            
-          <div className="tooltip-wrapper">
-            <Link to="/quiz-builder">
-              {/* {props.role==="Admin" && }
-              disabled={props.role==="Student"} */}
-              <button  className="tool-button">
-                Create Quiz
-              </button>
-            </Link>
+
+class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: this.props.user,
+    };
+    this.getQuizzes();
+  }
+
+  componentDidMount() {
+    const authToken = sessionStorage.getItem("quizden-authToken");
+    const user_id = sessionStorage.getItem("quizden-user-id");
+
+    // get Takequiz profile
+    TakequizService.getTakequiz(user_id, authToken).then((response) => {
+      if (response === false) {
+      } else {
+        this.setState({ user: response });
+        this.props.onUserUpdate(response);
+      }
+    });
+  }
+
+  getQuizzes = () => {
+    const user_id = sessionStorage.getItem("quizden-user-id");
+    QuizService.findByUser(user_id).then((response) => {
+      if (response === false) {
+      } else {
+        this.props.onQuizLoad(response);
+      }
+    });
+  };
+
+  render() {
+    if (!this.props.checkLogin()) {
+      return <Redirect to={{ pathname: "/login" }} />;
+    }
+    return (
+      <React.Fragment>
+        <NavBar
+          isLoggedIn={this.props.isLoggedIn}
+          checkLogin={this.props.checkLogin}
+          onLogout={this.props.onLogout}
+        />
+        <div className="container-fluid">
+          <div className="row mt-5 mb-5">
            
           </div>
-        </div>
-       
-      
-      </div>
-      <div className="row mt-4">
-        <div className="card">
-          <div className="tooltip-wrapper">
-            <Link to="/created">
+          <div
+            className="row mt-5 mb-5"
+        
+          >
+            
+            
+          
+            <CreatedResultList
               
-              <button  className="tool-button">
-                Created Quiz List
-              </button>
-            </Link>
-           
-          </div>
-        </div>
-        <div className="card">
-          <div className="tooltip-wrapper">
-            <Link to="/results">
-              <button className="tool-button">
-                Quiz Results
-              </button>
-            </Link>
-            
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  );
-};
+              classes="curated-quiz-section section"
+              quizzes={this.props.quizzes}
+              user={this.state.user}
+            />
+          
 
-export default Tools;
+
+
+
+            {/* Tools section  end*/}
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
+export default Dashboard;
