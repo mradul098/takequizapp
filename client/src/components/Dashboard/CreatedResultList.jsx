@@ -3,13 +3,13 @@ import ResultInfo from "./ResultInfo";
 
 const CreatedResultList = (props) => {
   return (
-    
+   
     <div  className={props.classes}>
       <div className="profile-name">Quiz Results</div>
       <div className="profile-email">
         {/* View results */}
       </div>
-
+{ console.log("props",props)}
       <table className="table mt-4">
         <thead className="count-title">
           <tr>
@@ -29,7 +29,7 @@ const CreatedResultList = (props) => {
             // console.log(quiz.partInfo[0].partScore),
             // console.log("++++++"),    
             quiz.partInfo.map((s,i)=>(
-              (quiz.partInfo[i].partId==props.user.name)?
+              (quiz.partInfo[i].partId==props.user.name || props.user.name == "Admin")?
               <ResultInfo
             // for (let i = 0; i < partInfo.length; i++) {
                 id={quiz._id}

@@ -65,7 +65,7 @@ class Dashboard extends Component {
           >
             
             
-          
+          {console.log(this.props.quizzes)}
             <CreatedResultList
               
               classes="curated-quiz-section section"

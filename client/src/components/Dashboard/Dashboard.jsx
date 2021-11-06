@@ -59,7 +59,7 @@ class Dashboard extends Component {
           <div className="row mt-5">
             {console.log(this.state.user)}
             <Profile
-              classes="col-sm-4 offset-sm-1 mr-4 section"
+              classes="col-sm-10 offset-sm-1 mr-4 section"
               name={this.state.user.name}
               email={this.state.user.email}
               curated={this.state.user.quizCurated}
@@ -67,33 +67,9 @@ class Dashboard extends Component {
               flawless={this.state.user.quizFlawless}
             />
 
-            {/* Tools section  */}
-            <Tools
-              classes="col-sm-6 ml-4 section tools"
-              title="Takequiz Tools"
-              // subtitle="Some tools may only be available in Pro License"
-            />
-            {/* Tools section  end*/}
+            
           </div>
-          <div
-            className="row mt-5 mb-5"
-            // very important code
-            // to (roughly) algin this with upper sections
-          >
-            <CreatedQuizList
-              // use this class only if you're desperate: curated-quiz-section
-              classes="curated-quiz-section section"
-              quizzes={this.props.quizzes}
-            />
-            <br/>
-            <CreatedResultList
-              // use this class only if you're desperate: curated-quiz-section
-              classes="curated-quiz-section section"
-              quizzes={this.props.quizzes}
-              user={this.state.user}
-            />
-            {/* Tools section  end*/}
-          </div>
+          
         </div>
       </React.Fragment>
     );

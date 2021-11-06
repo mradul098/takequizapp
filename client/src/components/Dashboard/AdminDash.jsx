@@ -57,19 +57,7 @@ class Dashboard extends Component {
         />
         <div className="container-fluid">
           <div className="row mt-5 mb-5">
-            {/* <Profile
-              classes="col-sm-4 offset-sm-1 mr-4 section"
-              name={this.state.user.name}
-              email={this.state.user.email}
-              curated={this.state.user.quizCurated}
-              attended={this.state.user.quizAttended}
-              flawless={this.state.user.quizFlawless}
-            /> */}
-
-            {/* Tools section  */}
-            
-            {/* Tools section  end*/}
-          </div>
+                     </div>
           <div
             className="row mt-5 mb-5"
             // very important code
@@ -80,7 +68,7 @@ class Dashboard extends Component {
               title="Takequiz Tools"
               name={this.state.user.name}
               email={this.state.user.email}
-              curated={this.state.user.quizCurated}
+              curated={this.state.user.quizCreated}
               attended={this.state.user.quizAttended}
               flawless={this.state.user.quizFlawless}
               // subtitle="Some tools may only be available in Pro License"
